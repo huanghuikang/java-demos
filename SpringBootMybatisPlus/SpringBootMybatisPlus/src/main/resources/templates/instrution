@@ -1,0 +1,21 @@
+Mybatis-Plus Learning: https://baomidou.com/
+
+Mybatis-Plus 是 Mybatis 的增强工具，在 Mybatis 的基础上只做增强不做改变，为简化开发，提高效率而生。
+Mybatis-Plus 可以节省大量的开发时间，所有的CRUD代码可以自动化完成。
+
+1、先准备好数据库环境
+2、创建 SpringBoot 项目
+3、引入 Mybatis-Plus、MySQL、lombok 等依赖   pom.xml
+4、修改配置文件  .properties 或 .yml
+5、创建实体类 entity（model、domain）实体层
+    用于存放实体类，类中定义了多个类属性，并与数据库表中的字段保持一致，一张表对应一个类。
+    主要由于定义与数据库对象对应的属性，提供 get/set 方法、toString 方法，有无参构造函数。
+6、mapper 层（dao 层） 数据持久层
+    数据持久层，先设计接口，然后在配置文件中进行配置并实现关联。
+    对数据库进行数据持久化操作，里面的方法语句直接对数据库进行操作。
+    该层作用为访问数据库，向数据库发送 sql 语句，完成数据的增删改查任务。
+7、service 层 = service 接口 + serviceImpl 实现类
+    用于存放业务逻辑处理，也是一些关于数据库处理的操作，但不直接与数据库交互。通过 service 层调用 dao 层进行业务逻辑的应用处理。
+    当项目的业务复杂时，service 层 = service 接口 + serviceImpl 实现类（将 mapper 层和 service 层整合的文件）。
+    封装 service 层的业务逻辑有利于业务逻辑的独立性和重复利用性。
+8、controller 层 控制器，控制业务逻辑 service,控制请求和响应，负责前后端交互。
